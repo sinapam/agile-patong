@@ -29,7 +29,7 @@
 				<g:each in="${commentators}" status="i" var="commentatorInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${commentatorInstance.id}">${fieldValue(bean: commentatorInstance, field: "name")}</g:link></td>
+						<td><g:link action="profile" id="${commentatorInstance.id}">${fieldValue(bean: commentatorInstance, field: "name")}</g:link></td>
 					
 						<td>${fieldValue(bean: commentatorInstance, field: "channel")}</td>
 					

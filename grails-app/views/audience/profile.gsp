@@ -3,20 +3,28 @@
 	<head>
 		<meta name="layout" content="audience">
 		<g:set var="entityName" value="${message(code: 'commentator.label', default: 'Commentator')}" />
-		<title></title>
+		<title>${commentator?.name}</title>
+
+		<r:require modules="chart" />
 	</head>
 	<body>
-		<h3>${commentator?.name}</h3>
+		
 		<div class="row">
-			<div class="col-md-4">
-				
-				<img src="" class="img-rounded">
+			<div class="col-md-3">
+				<div class="row text-center">
+				<img src="${commentator?.imageUrl}"   class="img-rounded col-md-12">
+			</div>
+				<h3>${commentator?.name}</h3>
+				<div class="text-center">
+					<span class="big"> <span class="glyphicon glyphicon-thumbs-up" ></span> : </span><span class="like-count">${countLike}</span> &nbsp;&nbsp;
+					<span class="big"> <span class="glyphicon glyphicon-thumbs-down"></span> : </span><span class="dislike-count">${countDisLike}</span>
 
-					<span class="big"> Like : </span><span class="like-count">${countLike}</span>
-					<span class="big"> Dislike : </span><span class="dislike-count">${countDisLike}</span>
+				</div>
+				<div id="container" ></div>
+				
 				
 			</div>
-			<div class="col-md-8 ">
+			<div class="col-md-9 ">
 				<h4>Comments</h4>
 				<g:form action="addFeedback" id="${commentator.id}" >
 				<div class="btn-group like-group" data-toggle="buttons">
@@ -33,9 +41,9 @@
 				<hr/>
 				<g:each var="feedback" in="${feedbacks}">
 					<div class="comment-box" >
-						<p>${feedback.comment}</p>
+						<p><g:fieldValue bean="${feedback}" field="comment"/></p>
 
-						
+						<small>${}</small>
 					</div>
 
 				</g:each>
@@ -88,5 +96,50 @@
 			<script>
 			$('.btn').button();
 			</script>
+				<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        colors: ['#3498db','#e74c3c'],
+        credits:{
+        	enabled:false
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'RATING',
+            data: [
+                ['Like',   ${countLike}],
+                ['Dislike',       ${countDisLike ?:0}]
+                
+            ]
+        }]
+    });
+});
+    
+
+		</script>
 	</body>
 </html>

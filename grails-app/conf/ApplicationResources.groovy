@@ -8,4 +8,12 @@ modules = {
     	resource url: 'css/bootstrap.min.css'
     	resource url: 'js/bootstrap.min.js'
     }
+
+    chart{
+        dependsOn 'bootstrap'
+        resource url: 'js/highcharts.js'
+
+    }
+
+   
 }
