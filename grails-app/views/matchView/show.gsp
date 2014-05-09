@@ -13,9 +13,11 @@
 			<div class="col-md-12 ">
 				<div class="row text-center">
 					<div class="col-md-6">
+						<img src="${match?.homeImage}"   class="img-rounded col-md-12"><br/>
 						${match?.home}
 					</div>
 					<div class="col-md-6">
+					  <img src="${match?.awayImage}"   class="img-rounded col-md-12">
 						${match?.away}
 					</div>
 				</div>
