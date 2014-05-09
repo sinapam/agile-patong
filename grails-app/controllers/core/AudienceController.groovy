@@ -3,7 +3,7 @@ package core
 class AudienceController {
 
 	def index = {
-		reidrect(action:"commentators")	
+		redirect(action:"commentators")	
 	}
 
 	def commentators = {
@@ -24,14 +24,39 @@ class AudienceController {
 		}
 		try {
 			def commentator = Commentator.get(params.id as Long)
-			[commentator: commentator]
+			def countLike = Feedback.withCriteria {
+				eq("commentator", commentator)
+				eq("score", 1)
+			}
+			def countDisLike = Feedback.withCriteria {
+				eq("commentator", commentator)
+				eq("score", -1)
+			}
+			[commentator: commentator, countLike: countLike.size(), countDisLike: countDisLike.size()]
+		}
+		catch(Exception e) {
+			flash.message = message(code:"commentator.notfound")
+			flash.css = "error"
+			redirect(action:"commentators")
+		}		
+	}
+
+	def addRemark = {
+		if(!params.id){
+			flash.message = message(code:"parameter.notfound")
+			flash.css = "error"
+			redirect(action:"commentators")
+		}
+		def commentator
+		try {
+			commentator = Commentator.get(params.id as Long)
 		}
 		catch(Exception e) {
 			flash.message(code:"commentator.notfound")
 			flash.css = "error"
 			redirect(action:"commentators")
-		}
-		
+		}	
+
 	}
 
 }
