@@ -29,8 +29,12 @@ environments {
     }
     production {
         dataSource {
+            ddriverClassName = "com.mysql.jdbc.Driver"
+            username = "patong"
+            password =  "patong"
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            //logSql = true
+            url = "jdbc:mysql://localhost:3306/patong?useUnicode=true&characterEncoding=utf8"
             pooled = true
             properties {
                maxActive = -1
