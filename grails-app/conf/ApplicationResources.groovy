@@ -4,7 +4,7 @@ modules = {
     }
 
     bootstrap{
-    	
+    	dependsOn 'jquery'
     	resource url: 'css/bootstrap.min.css'
     	resource url: 'js/bootstrap.min.js'
     }

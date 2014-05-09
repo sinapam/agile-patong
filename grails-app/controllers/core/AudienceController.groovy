@@ -51,11 +51,12 @@ class AudienceController {
 		def commentator
 		try {
 			commentator = Commentator.get(params.id as Long)
-			def feedback = new Feedback(score: params.score, commentator: commentator)
+			def feedback = new Feedback(score: (params.score ), commentator: commentator, comment:params.comment)
+			
 			if(feedback.save(flush:true)){
 				flash.message = message(code:"feedback.add.success")
 				flash.css = "info"
-				redirect(action:"commentators")
+				redirect(action:"profile",id:params.id)
 			}else{
 				flash.message = message(code:"feedback.add.error")
 				flash.css = "error"

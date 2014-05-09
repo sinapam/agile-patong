@@ -10,26 +10,35 @@
 		<div class="row">
 			<div class="col-md-4">
 				
-					<span class="big"> Like : </span><span class="like-count">3021</span>
-					<span class="big"> Dislike : </span><span class="dislike-count">221</span>
+				<img src="" class="img-rounded">
+
+					<span class="big"> Like : </span><span class="like-count">${countLike}</span>
+					<span class="big"> Dislike : </span><span class="dislike-count">${countDisLike}</span>
 				
 			</div>
 			<div class="col-md-8 ">
 				<h4>Comments</h4>
 				<g:form action="addFeedback" id="${commentator.id}" >
 				<div class="btn-group like-group" data-toggle="buttons">
-  <label class="btn btn-default">
-    <input type="radio" name="score" id="option1" value="1"> Like
-  </label>
-  <label class="btn btn-default">
-    <input type="radio" name="score" id="option2" value-"-1"> Dislike
-  </label>
- 
-</div>
+				  <label class="btn btn-default">
+				    <input type="radio" name="score" id="option1" value="1"> Like
+				  </label>
+				  <label class="btn btn-default">
+				    <input type="radio" name="score" id="option2" value="-1"> Dislike
+				  </label>
+				</div>
 				<g:textArea class="form-control" rows="3" name="comment" />
 				<g:submitButton name="submit" class="btn btn-primary submit" value="submit" />
 				</g:form>
 				<hr/>
+				<g:each var="feedback" in="${feedbacks}">
+					<div class="comment-box" >
+						<p>${feedback.comment}</p>
+
+						
+					</div>
+
+				</g:each>
 			</div>
 
 
@@ -68,6 +77,16 @@
 					font-size: 20px;
 				}
 
+				.comment-box{
+					border:1px solid #eee;
+					margin: 5px 0px;
+					padding: 10px;
+				}
+
 			</style>
+
+			<script>
+			$('.btn').button();
+			</script>
 	</body>
 </html>
