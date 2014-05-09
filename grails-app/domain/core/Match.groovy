@@ -4,7 +4,9 @@ class Match {
 
 	String name 
 	String home
+	String homeImage
 	String away
+	String awayImage
 	Date belongDate
 	
 	static hasMany = [commentators: Commentator, matchFeedbacks: MatchFeedback]
@@ -12,8 +14,14 @@ class Match {
 	static constraints = {
 		name nullable: true
 		home nullable: false
+		homeImage nullable:true
 		away nullable: false
+		awayImage nullable:false
 		belongDate nullable:false
+	}
+
+	def displayName(){
+		return "${home} vs ${away}"
 	}
 
 }
