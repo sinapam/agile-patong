@@ -34,20 +34,3 @@
 	<g:textField name="detail" value="${commentatorInstance?.detail}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: commentatorInstance, field: 'feedbacks', 'error')} ">
-	<label for="feedbacks">
-		<g:message code="commentator.feedbacks.label" default="Feedbacks" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${commentatorInstance?.feedbacks?}" var="f">
-    <li><g:link controller="feedback" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="feedback" action="create" params="['commentator.id': commentatorInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'feedback.label', default: 'Feedback')])}</g:link>
-</li>
-</ul>
-
-</div>
-
