@@ -39,11 +39,24 @@
 				<g:submitButton name="submit" class="btn btn-primary submit" value="submit" />
 				</g:form>
 				<hr/>
-				<g:each var="feedback" in="${feedbacks}">
+				<g:each var="feedback"  status="i" in="${feedbacks}">
 					<div class="comment-box" >
+						<span class="style:margin-top:5px;" ><strong >Comment ${feedbacks.size() - i}</strong></span>
+						<hr/>
 						<p><g:fieldValue bean="${feedback}" field="comment"/></p>
 
-						<small>${}</small>
+						<small >
+							<g:if test="${feedback.score == 1}">
+								<span class="glyphicon glyphicon-thumbs-up green" ></span>	
+							</g:if>
+							<g:if test="${feedback.score == 0}">
+								
+							</g:if>
+							<g:if test="${feedback.score == -1}">
+								<span class="glyphicon glyphicon-thumbs-down red" ></span>	
+							</g:if>
+							</small> &nbsp;
+						<small class="none-effect"><g:formatDate date="${feedback.lastUpdated}" format="dd/MM/yyyy HH:mm:ss"/></small>
 					</div>
 
 				</g:each>
@@ -89,6 +102,18 @@
 					border:1px solid #eee;
 					margin: 5px 0px;
 					padding: 10px;
+				}
+
+				.none-effect{
+					color: #aaa;
+				}
+
+				.green{
+					color: #3498db;
+				}
+
+				.red{
+					color:#e74c3c;
 				}
 
 			</style>
