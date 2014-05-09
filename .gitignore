@@ -45,6 +45,10 @@ Thumbs.db
 # "temporary" build files
 /target
 
+# gradle
+build
+.gradle
+
 # Eclipe
 /target-eclipse
 
