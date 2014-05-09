@@ -29,10 +29,10 @@
 				<g:form action="addFeedback" id="${commentator.id}" >
 				<div class="btn-group like-group" data-toggle="buttons">
 				  <label class="btn btn-default">
-				    <input type="radio" name="score" id="option1" value="1"> Like
+				    <input type="radio" name="score" id="option1" value="1"> <span class="glyphicon glyphicon-thumbs-up" ></span>
 				  </label>
 				  <label class="btn btn-default">
-				    <input type="radio" name="score" id="option2" value="-1"> Dislike
+				    <input type="radio" name="score" id="option2" value="-1"> <span class="glyphicon glyphicon-thumbs-down"></span>
 				  </label>
 				</div>
 				<g:textArea class="form-control" rows="3" name="comment" />
