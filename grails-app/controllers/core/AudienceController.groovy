@@ -3,7 +3,7 @@ package core
 class AudienceController {
 
 	def index = {
-		reidrect(action:"commentators")	
+		redirect(action:"commentators")	
 	}
 
 	def commentators = {
