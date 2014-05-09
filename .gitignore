@@ -1,0 +1,58 @@
+# Compiled source #
+*.class
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# IDE support files
+/.classpath
+/.launch
+/.project
+/.settings
+/*.launch
+/*.tmproj
+/ivy*
+/eclipse
+
+
+# Database # Additional #
+*.sql
+
+# general HSQL database files
+*Db.properties
+*Db.script
+
+# logs
+/stacktrace.log
+/test/reports
+/logs
+
+# project release file
+/*.war
+
+# older plugin install locations
+/plugins
+/web-app/plugins
+/web-app/WEB-INF/classes
+
+# "temporary" build files
+/target
+
+# Eclipe
+/target-eclipse
+
+# other
+*.iws
+/bin
+
+# ignore config
+/grails-app/conf/DataSource.groovy
+
+grails-app/conf/DataSource.groovy
