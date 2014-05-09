@@ -32,7 +32,10 @@ class AudienceController {
 				eq("commentator", commentator)
 				eq("score", -1)
 			}
-			[commentator: commentator, countLike: countLike.size(), countDisLike: countDisLike.size()]
+			def feedbacks = Feedback.withCriteria {
+				eq("commentator", commentator)
+			}
+			[commentator: commentator, feedbacks: feedbacks, countLike: countLike.size(), countDisLike: countDisLike.size()]
 		}
 		catch(Exception e) {
 			flash.message = message(code:"commentator.notfound")
