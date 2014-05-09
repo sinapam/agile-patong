@@ -12,7 +12,7 @@ class AudienceController {
 	}
 
 	def matchs = {
-		def matchs = Match.list()
+		def matchs = FootballMatch.list()
 		[matchs: matchs]
 	}
 

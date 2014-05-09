@@ -7,7 +7,7 @@ class MatchViewController {
 	}
 
 	def list = {
-		def matchs = Match.withCriteria {
+		def matchs = FootballMatch.withCriteria {
 			order("belongDate", "desc")
 			order("id", "desc")
 		}
@@ -21,7 +21,7 @@ class MatchViewController {
 			redirect(action:"list")
 		}
 		try {
-			def match = Match.get(params.id as Long)
+			def match = FootballMatch.get(params.id as Long)
 			def countLike = MatchFeedback.withCriteria {
 				eq("match", match)
 				eq("score", 1)
@@ -52,7 +52,7 @@ class MatchViewController {
 		}
 		def match
 		try {
-			match = Match.get(params.id as Long)
+			match = FootballMatch.get(params.id as Long)
 			def feedback = new MatchFeedback(score: (params.score ), match: match, comment:params.comment)
 			
 			if(feedback.save(flush:true)){

@@ -1,6 +1,6 @@
 package core
 
-class Match {
+class FootballMatch {
 
 	String name 
 	String home

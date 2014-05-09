@@ -9,7 +9,7 @@ class MatchFeedback {
 	Date dateCreated
 	Date lastUpdated
 
-	static belongsTo = [match: Match]
+	static belongsTo = [match: FootballMatch]
 
 	static constraints = {
 		score nullable: true
