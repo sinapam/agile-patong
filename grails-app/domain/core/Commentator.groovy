@@ -13,7 +13,7 @@ class Commentator {
 		name nullable: false
 		channel nullable: true 
 		age nullable:true 
-		detail nullable:true 
+		detail nullable:true, widget:'textarea'
 	}
 
 	static mapping = {
