@@ -18,9 +18,7 @@ class AudienceController {
 
 	def profile = {
 		if(!params.id){
-			flash.message(code:"parameter.notfound")
-			flash.css = "error"
-			redirect(action:"commentators")
+			//flash.message(code:"parameter.notfound")
 		}
 		try {
 			def commentator = Commentator.get(params.id as Long)
@@ -59,7 +57,6 @@ class AudienceController {
 			flash.css = "error"
 			redirect(action:"commentators")
 		}	
-
 	}
 
 }
