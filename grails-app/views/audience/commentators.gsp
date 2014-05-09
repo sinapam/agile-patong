@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="audience">
 		<g:set var="entityName" value="${message(code: 'commentator.label', default: 'Commentator')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -38,7 +38,7 @@
 						<td>${fieldValue(bean: commentatorInstance, field: "detail")}</td>
 						
 						<td>
-							<g:link action="profile" >comment</g:link>
+							<g:link action="profile" id="${commentatorInstance.id}" >comment</g:link>
 						</td>
 
 					</tr>

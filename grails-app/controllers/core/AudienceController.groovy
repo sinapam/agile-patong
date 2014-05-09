@@ -63,7 +63,7 @@ class AudienceController {
 			}
 		}
 		catch(Exception e) {
-			flash.message(code:"commentator.notfound")
+			flash.message =  message(code:"commentator.notfound")
 			flash.css = "error"
 			redirect(action:"commentators")
 		}	
