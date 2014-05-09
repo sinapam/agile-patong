@@ -6,6 +6,7 @@ class Commentator {
 	String channel
 	Integer age
 	String detail
+	String imageUrl
 
 	static hasMany = [feedbacks: Feedback]
 
@@ -14,6 +15,7 @@ class Commentator {
 		channel nullable: true 
 		age nullable:true 
 		detail nullable:true, widget:'textarea'
+		imageUrl nullable:true
 	}
 
 	static mapping = {

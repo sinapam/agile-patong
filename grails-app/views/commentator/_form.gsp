@@ -26,6 +26,14 @@
 	<g:field name="age" type="number" value="${commentatorInstance.age}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: commentatorInstance, field: 'imageUrl', 'error')} ">
+	<label for="imageUrl">
+		<g:message code="commentator.imageUrl.label" default="ImageUrl" />
+		
+	</label>
+	<g:textField name="imageUrl" value="${commentatorInstance?.imageUrl}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: commentatorInstance, field: 'detail', 'error')} ">
 	<label for="detail">
 		<g:message code="commentator.detail.label" default="Detail" />
