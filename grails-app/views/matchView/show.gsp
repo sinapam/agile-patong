@@ -13,12 +13,12 @@
 			<div class="col-md-12 ">
 				<div class="row text-center">
 					<div class="col-md-6">
-						<img src="${match?.homeImage}"   class="img-rounded col-md-12"><br/>
-						${match?.home}
+						<img src="${match?.homeImage}"   class="img-rounded" witch="300" height="400"><br/>
+						<h4>${match?.home}</h4>
 					</div>
 					<div class="col-md-6">
-					  <img src="${match?.awayImage}"   class="img-rounded col-md-12">
-						${match?.away}
+					  <img src="${match?.awayImage}"   class="img-rounded" witch="300" height="400"><br/>
+					  <h4>${match?.away}</h4>
 					</div>
 				</div>
 				<h3>${match?.displayName()}</h3>
