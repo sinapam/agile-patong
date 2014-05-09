@@ -17,7 +17,7 @@ class Feedback {
 	}
 
 	static mapping = {
-        autoTimestamp false
+        autoTimestamp true
     }
 
 
