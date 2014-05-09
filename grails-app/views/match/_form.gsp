@@ -18,12 +18,28 @@
 	<g:textField name="home" value="${matchInstance?.home}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'homeImage', 'error')} ">
+	<label for="homeImage">
+		<g:message code="match.homeImage.label" default="Home Image" />
+		
+	</label>
+	<g:textField name="homeImage" value="${matchInstance?.homeImage}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'away', 'error')} ">
 	<label for="away">
 		<g:message code="match.away.label" default="Away" />
 		
 	</label>
 	<g:textField name="away" value="${matchInstance?.away}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'awayImage', 'error')} ">
+	<label for="awayImage">
+		<g:message code="match.awayImage.label" default="Away Image" />
+		
+	</label>
+	<g:textField name="awayImage" value="${matchInstance?.awayImage}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: matchInstance, field: 'belongDate', 'error')} required">

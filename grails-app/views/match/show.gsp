@@ -41,11 +41,29 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${matchInstance?.homeImage}">
+				<li class="fieldcontain">
+					<span id="homeImage-label" class="property-label"><g:message code="match.homeImage.label" default="Home Image" /></span>
+					
+						<span class="property-value" aria-labelledby="homeImage-label"><g:fieldValue bean="${matchInstance}" field="homeImage"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${matchInstance?.away}">
 				<li class="fieldcontain">
 					<span id="away-label" class="property-label"><g:message code="match.away.label" default="Away" /></span>
 					
 						<span class="property-value" aria-labelledby="away-label"><g:fieldValue bean="${matchInstance}" field="away"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${matchInstance?.awayImage}">
+				<li class="fieldcontain">
+					<span id="awayImage-label" class="property-label"><g:message code="match.awayImage.label" default="Away Image" /></span>
+					
+						<span class="property-value" aria-labelledby="awayImage-label"><g:fieldValue bean="${matchInstance}" field="awayImage"/></span>
 					
 				</li>
 				</g:if>

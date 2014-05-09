@@ -28,7 +28,11 @@
 					
 						<g:sortableColumn property="home" title="${message(code: 'match.home.label', default: 'Home')}" />
 					
+						<g:sortableColumn property="homeImage" title="${message(code: 'match.homeImage.label', default: 'Home Image')}" />
+					
 						<g:sortableColumn property="away" title="${message(code: 'match.away.label', default: 'Away')}" />
+					
+						<g:sortableColumn property="awayImage" title="${message(code: 'match.awayImage.label', default: 'Away Image')}" />
 					
 						<g:sortableColumn property="belongDate" title="${message(code: 'match.belongDate.label', default: 'Belong Date')}" />
 					
@@ -42,7 +46,11 @@
 					
 						<td>${fieldValue(bean: matchInstance, field: "home")}</td>
 					
+						<td>${fieldValue(bean: matchInstance, field: "homeImage")}</td>
+					
 						<td>${fieldValue(bean: matchInstance, field: "away")}</td>
+					
+						<td>${fieldValue(bean: matchInstance, field: "awayImage")}</td>
 					
 						<td><g:formatDate date="${matchInstance.belongDate}" /></td>
 					
